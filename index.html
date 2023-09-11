@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>efrome</title>
+
+  <!-- bootstrap -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="assets/css/generated/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/generated_min/bootstrap.min.css">
+
+  <!-- lightGallery -->
+  <link rel="stylesheet" href="assets/css/generated_min/lightgallery-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/generated_min/lg-zoom.min.css">
+  <link rel="stylesheet" href="assets/css/generated_min/lg-pager.min.css">
+
+  <!-- justified gallery -->
+  <link rel="stylesheet" href="assets/css/generated_min/justifiedGallery.min.css">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@500&family=Zen+Kaku+Gothic+New:wght@500&display=swap"
+    rel="stylesheet">
+
+  <!-- material icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,-25" />
+
+  <!-- <link rel="stylesheet" href="assets/css/microModal.css"> -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header class="container">
+    <div id="title" class="my-3 navbar navbar-expand-md">
+      <div class="container-fluid">
+        <h1 class="navbar-brand m-0">efrome.net</h1>
+        <a class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <img class="toggler-icons navbar-toggler-icon-closed" src="assets/images/ui/togglers/0.webp" alt="メニューを開く">
+          <img class="toggler-icons navbar-toggler-icon-opened" src="assets/images/ui/togglers/1.webp" alt="メニューを閉じる">
+        </a>
+        <div id="topNavbar" class="collapse navbar-collapse justify-content-end mt-3 mt-md-0">
+          <ul class="m-0 navbar-nav">
+            <li class="py-2 py-md-0 px-3">
+              <a data-bs-toggle="modal" data-bs-target="#modal_post" href="#">
+                <span class="material-symbols-outlined me-2">local_post_office</span>
+                投稿/修正/削除
+              </a>
+            </li>
+
+            <li class="py-2 py-md-0 px-3">
+              <a data-bs-toggle="modal" data-bs-target="#modal_language" href="#">
+                <span class="material-symbols-outlined me-2">translate</span>
+                言語選択
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p>
+      <a href="https://na.finalfantasyxiv.com/lodestone/character/44359561/">Erika
+        Uzusube</a>から、私のトームストーンに届いた写真を掲載しています。
+    </p>
+
+    <div id="spoilerBlock" class="px-2">
+      <div class="row">
+        <div class="col-12">
+          <h2>
+            ネタバレガード
+            <a data-bs-toggle="modal" data-bs-target="#modal_spoilerAttention" class="helpIcon">?</a>
+          </h2>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-12">
+          <p>
+            指定されたパッチよりも先のコンテンツが含まれる画像が隠されます。<br>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+          <select class="p-2" name="fSpoiler" id="fSpoiler">
+            <option selected value="200">2.0 - 新生エオルゼア</option>
+            <option value="201">2.x - 新生エオルゼア + マイナーパッチ</option>
+            <option value="300">3.0 - 蒼天のイシュガルド</option>
+            <option value="301">3.x - 蒼天のイシュガルド + マイナーパッチ</option>
+            <option value="400">4.0 - 紅蓮のリベレーター</option>
+            <option value="401">4.x - 紅蓮のリベレーター + マイナーパッチ</option>
+            <option value="500">5.0 - 漆黒のヴィランズ</option>
+            <option value="501">5.x - 漆黒のヴィランズ + マイナーパッチ</option>
+            <option value="600">6.0 - 暁月のフィナーレ</option>
+            <option value="601">6.x - 暁月のフィナーレ + マイナーパッチ</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-8">
+          <p>より後のコンテンツが含まれる写真にブラーを適用する</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="filter" class="row">
+      <h2>絞り込みフィルタ</h2>
+      <div id="fWrapper">
+        <div class="fItems col-12 col-sm-6 col-md-4">
+          <span>場所</span>
+          <select class="filters mb-3 mb-md-0 p-2" name="fPlace" id="fPlace">
+            <option selected value="pl_ALL">どこでも</option>
+            <option value="pl_LNS">ラノシア</option>
+            <option value="pl_TBS">黒衣森</option>
+            <option value="pl_THA">ザナラーン</option>
+            <option value="pl_MRD">モードゥナ</option>
+            <option value="pl_CRT">クルザス</option>
+            <option value="pl_ISH">イシュガルド</option>
+            <option value="pl_AVL">アバラシア</option>
+            <option value="pl_DRV">ドラヴァニア</option>
+            <option value="pl_GRB">ギラバニア</option>
+            <option value="pl_HNG">ひんがしの国</option>
+            <option value="pl_OTH">オサード</option>
+            <option value="pl_NRV">ノルブラント</option>
+          </select>
+        </div>
+
+        <div class="fItems col-12 col-sm-6 col-md-4">
+          <span>撮影者</span>
+          <select class="filters mb-3 mb-md-0 p-2" name="fAgent" id="fAgent">
+            <option selected value="ag_ALL">誰でも</option>
+            <option value="ag_ERK">Erika Uzusube</option>
+            <option value="ag_PLR">Player</option>
+          </select>
+        </div>
+
+        <div class="fItems col-12 col-md-4">
+          <span>登場パッチ</span>
+          <select class="filters mb-3 mb-md-0 p-2" name="fPatch" id="fPatch">
+            <option selected value="pt_000">全て</option>
+            <option value="pt_200">2.0: 新生エオルゼア</option>
+            <option value="pt_201">2.x: 新生エオルゼア + マイナーパッチ</option>
+            <option value="pt_300">3.0: 蒼天のイシュガルド</option>
+            <option value="pt_301">3.x: 蒼天のイシュガルド + マイナーパッチ</option>
+            <option value="pt_400">4.0: 紅蓮のリベレーター</option>
+            <option value="pt_401">4.x: 紅蓮のリベレーター + マイナーパッチ</option>
+            <option value="pt_500">5.0: 漆黒のヴィランズ</option>
+            <option value="pt_501">5.x: 漆黒のヴィランズ + マイナーパッチ</option>
+            <option value="pt_600">6.0: 暁月のフィナーレ</option>
+            <option value="pt_601">6.x: 暁月のフィナーレ + マイナーパッチ</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div id="gallery" style="margin: 0 auto;"></div>
+
+  <div id="bottom" class="container-fluid p-0">
+    <div id="bottomImg" class="row justify-content-center m-0">
+      <div class="col-4 text-center">
+        <a id="loadBtn" class="d-inline-block">
+          <img src="assets/images/ui/pageBottom.png" alt="ページの最下部です！">
+        </a>
+      </div>
+    </div>
+
+    <footer>
+    </footer>
+  </div>
+
+  <!-- modals -->
+  <!-- modal_spoierAttention -->
+  <div class="modal fade" id="modal_spoilerAttention" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <!-- modal title -->
+          <h2 class="modal-title">ネタバレガードの注意事項！</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <!-- modal body -->
+        <div class="modal-body modal-bg">
+          <!-- modal content -->
+          <div class="modal-content">
+              <div class="modalWhite inline-block">
+                以下の要素についてチェックを行っています
+                <ul>
+                  <li>マップ</li>
+                  <li>メインストーリー上主要なNPC、及びそのミニオン</li>
+                </ul>
+                逆に作業量の観点から、例えば以下の要素についてはチェックの対象としていません。
+                <ul>
+                  <li>装備品</li>
+                  <li>ストーリー上比較的重要ではないNPC</li>
+                  <li>現実世界の生き物やFFXIV内のフィールドモブのミニオン</li>
+                </ul>
+              </div>
+            </div>
+            <!-- /modal content -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal_post -->
+  <div class="modal fade" id="modal_post" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <!-- modal title -->
+          <h2 class="modal-title">efromeへの投稿、修正・削除</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- modal body -->
+        <div class="modal-body">
+          <!-- modal content -->
+          <div class="modalBg">
+            <h3>投稿</h3>
+            <p class="mb-4">
+              efromeでは皆さんの投稿をお待ちしています！<br>
+              下記のフォームからあなたの素敵なスクリーンショットを送ってください。
+            </p>
+
+            <h3>修正・削除</h3>
+            <p>
+              内容に誤りが見られる場合は修正箇所を、もしご自身が写っている等の理由で画像を削除したい場合は削除箇所を、同じくフォームからお伝えください。<br>
+            </p>
+
+            <div class="d-flex justify-content-center">
+              <div class="rowItemWrap">
+                <a class="aBtn" href="https://forms.gle/dHSxN8aV2PFGRyfP9">フォームへ</a>
+              </div>
+            </div>
+          </div>
+          <!-- /modal content -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal_language -->
+  <div class="modal fade" id="modal_language" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <!-- modal title -->
+          <h2 class="modal-title">言語選択</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- modal body -->
+        <div class="modal-body">
+          <!-- modal content -->
+          <ul>
+            <a href="#" class="lang_selected">
+              <li>日本語</li>
+            </a>
+            <a href="index_en.html">
+              <li>English<span class="material-symbols-outlined">g_translate</span></li>
+            </a>
+            <a href="index_zh.html">
+              <li>简体中文<span class="material-symbols-outlined">g_translate</span></li>
+            </a>
+          </ul>
+          <!-- /modal content -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- emodal -->
+  <div class="modal fade" id="modal_secret" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <!-- modal title -->
+          <h2 class="modal-title">hi!</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- modal body -->
+        <div class="modal-body">
+          <!-- modal content -->
+          <!-- /modal content -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- back to top button -->
+  <!-- <div id="scrollToTop">
+    <a>
+      <span class="d-inline-block bg-primary">↑</span>
+    </a>
+  </div> -->
+
+  <a id="scrollToTop">
+    <img src="assets/images/ui/return.png" alt="トップへ戻る">
+  </a>
+
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+
+  <!-- justified gallery -->
+  <script src="assets/js/justifiedGallery/jquery.justifiedGallery.js"></script>
+
+  <!-- lightGallery -->
+  <script src="assets/js/lightGallery/plugins/pager/lg-pager.min.js"></script>
+  <script src="assets/js/lightGallery/plugins/zoom/lg-zoom.min.js"></script>
+  <script src="assets/js/lightGallery/lightgallery.umd.js"></script>
+
+  <script src="assets/js/functions.js"></script>
+  <script src="assets/js/attatchElems.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

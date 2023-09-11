@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>efrome</title>
+
+  <!-- bootstrap -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="assets/css/generated/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/generated_min/bootstrap.min.css">
+
+  <!-- lightGallery -->
+  <link rel="stylesheet" href="assets/css/generated_min/lightgallery-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/generated_min/lg-zoom.min.css">
+  <link rel="stylesheet" href="assets/css/generated_min/lg-pager.min.css">
+
+  <!-- justified gallery -->
+  <link rel="stylesheet" href="assets/css/generated_min/justifiedGallery.min.css">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@500&family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+
+  <!-- material icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,-25" />
+
+  <!-- <link rel="stylesheet" href="assets/css/microModal.css"> -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/sourceHanSans.css">
+</head>
+
+<body>
+  <header class="container">
+    <div id="title" class="my-3 navbar navbar-expand-md">
+      <div class="container-fluid">
+        <h1 class="navbar-brand m-0">efrome.net</h1>
+        <a class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <img class="toggler-icons navbar-toggler-icon-closed" src="assets/images/ui/togglers/0.webp" alt="メニューを開く">
+          <img class="toggler-icons navbar-toggler-icon-opened" src="assets/images/ui/togglers/1.webp" alt="メニューを閉じる">
+        </a>
+        <div id="topNavbar" class="collapse navbar-collapse justify-content-end mt-3 mt-md-0">
+          <ul class="m-0 navbar-nav">
+            <li class="py-2 py-md-0 px-3">
+              <a data-bs-toggle="modal" data-bs-target="#modal_post" href="#">
+                <span class="material-symbols-outlined me-2">local_post_office</span>
+                發帖/修改/刪除
+              </a>
+            </li>
+
+            <li class="py-2 py-md-0 px-3">
+              <a data-bs-toggle="modal" data-bs-target="#modal_language" href="#">
+                <span class="material-symbols-outlined me-2">translate</span>
+                語言變化
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p>
+      我正在發布我的<a href="https://jp.finalfantasyxiv.com/lodestone/character/44359561/">Erika Uzusube</a>發送到我的智能手機的照片。
+    </p>
+
+    <div id="spoilerBlock" class="px-2">
+      <div class="row">
+        <div class="col-12">
+          <h2>
+            预防剧透
+            <a data-bs-toggle="modal" data-bs-target="#modal_spoilerAttention" class="helpIcon">?</a>
+          </h2>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-12">
+          <p>
+            包含晚于指定版本内容的图片会被隐藏。<br>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+          <select class="p-2" name="fSpoiler" id="fSpoiler">
+            <option selected value="200">2.0 - 新的艾歐澤亞</option>
+            <option value="201">2.x - 新的艾歐澤亞 + 小補丁</option>
+            <option value="300">3.0 - 藍天的伊修加德</option>
+            <option value="301">3.x - 藍天的伊修加德 + 小補丁</option>
+            <option value="400">4.0 - 猩紅解放者</option>
+            <option value="401">4.x - 猩紅解放者 + 小補丁</option>
+            <option value="500">5.0 - 漆黑的惡棍們</option>
+            <option value="501">5.x - 漆黑的惡棍們 + 小補丁</option>
+            <option value="600">6.0 - 曉的結局</option>
+            <option value="601">6.x - 曉的結局 + 小補丁</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-8">
+          <p>隱藏包含比此版本更新的信息的圖像</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="filter" class="row">
+      <h2>篩選</h2>
+      <div id="fWrapper">
+        <div class="fItems col-12 col-sm-6 col-md-4">
+          <span>地方</span>
+          <select class="filters mb-3 mb-md-0 p-2" name="fPlace" id="fPlace">
+            <option selected value="pl_ALL">任何地方</option>
+            <option value="pl_LNS">拉諾西亞</option>
+            <option value="pl_TBS">黑布森林</option>
+            <option value="pl_THA">塔納蘭</option>
+            <option value="pl_MRD">莫杜納</option>
+            <option value="pl_CRT">庫爾薩斯</option>
+            <option value="pl_ISH">伊修加德</option>
+            <option value="pl_AVL">阿瓦拉西亞</option>
+            <option value="pl_DRV">龍族</option>
+            <option value="pl_GRB">吉拉瓦尼亞</option>
+            <option value="pl_HNG">東方國家</option>
+            <option value="pl_OTH">奧薩德</option>
+            <option value="pl_NRV">諾夫蘭</option>
+          </select>
+        </div>
+
+        <div class="fItems col-12 col-sm-6 col-md-4">
+          <span>攝影師</span>
+          <select class="filters mb-3 mb-md-0 p-2" name="fAgent" id="fAgent">
+            <option selected value="ag_ALL">任何人</option>
+            <option value="ag_ERK">Erika Uzusube</option>
+            <option value="ag_PLR">Player</option>
+          </select>
+        </div>
+
+        <div class="fItems col-12 col-md-4">
+          <span>出現的版本</span>
+          <select class="filters mb-3 mb-md-0 p-2" name="fPatch" id="fPatch">
+            <option selected value="pt_000">所有版本</option>
+            <option value="pt_200">2.0: 新的艾歐澤亞</option>
+            <option value="pt_201">2.x: 新的艾歐澤亞 + 小補丁</option>
+            <option value="pt_300">3.0: 藍天的伊修加德</option>
+            <option value="pt_301">3.x: 藍天的伊修加德 + 小補丁</option>
+            <option value="pt_400">4.0: 猩紅解放者</option>
+            <option value="pt_401">4.x: 猩紅解放者 + 小補丁</option>
+            <option value="pt_500">5.0: 漆黑的惡棍們</option>
+            <option value="pt_501">5.x: 漆黑的惡棍們 + 小補丁</option>
+            <option value="pt_600">6.0: 曉的結局</option>
+            <option value="pt_601">6.x: 曉的結局 + 小補丁</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div id="gallery" style="margin: 0 auto;"></div>
+
+  <div id="bottom" class="container-fluid p-0">
+    <div id="bottomImg" class="row justify-content-center m-0">
+      <div class="col-4 text-center">
+        <a id="loadBtn" class="d-inline-block">
+          <img src="assets/images/ui/pageBottom.png" alt="ページの最下部です！">
+        </a>
+      </div>
+    </div>
+
+    <footer>
+    </footer>
+  </div>
+
+  <!-- modals -->
+  <!-- modal_spoierAttention -->
+  <div class="modal fade" id="modal_spoilerAttention" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <!-- modal title -->
+          <h2 class="modal-title">防劇透功能注意事項！</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <!-- modal body -->
+        <div class="modal-body modal-bg">
+          <!-- modal content -->
+          <div class="modal-content">
+              <div class="modalWhite inline-block">
+                我們檢查以下元素
+                <ul>
+                  <li>地圖</li>
+                  <li>主要故事 NPC 和他們的爪牙</li>
+                </ul>
+                另一方面，從工作量的角度來看，例如，以下要素不屬於檢查範圍。
+                <ul>
+                  <li>設備</li>
+                  <li>對故事相對不重要的NPC</li>
+                  <li>FFXIV中的戰場上的敵人和現實世界中的生物</li>
+                </ul>
+              </div>
+            </div>
+            <!-- /modal content -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal_post -->
+  <div class="modal fade" id="modal_post" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <!-- modal title -->
+          <h2 class="modal-title">在efrome上發布、編輯和刪除</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- modal body -->
+        <div class="modal-body">
+          <!-- modal content -->
+          <div class="modalBg">
+            <h3>發帖</h3>
+            <p class="mb-4">
+              使用下面的表格將您的精彩屏幕截圖發送給我們。
+            </p>
+
+            <h3>修改・刪除</h3>
+            <p>
+              如果您發現內容有任何錯誤，請使用相同的表格告知我們需要更正的地方，或者您希望刪除該圖像，因為它包含您自己等。<br>
+            </p>
+
+            <div class="d-flex justify-content-center">
+              <div class="rowItemWrap">
+                <a class="aBtn" href="https://forms.gle/dHSxN8aV2PFGRyfP9">訪問聯繫表格</a>
+              </div>
+            </div>
+          </div>
+          <!-- /modal content -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal_language -->
+  <div class="modal fade" id="modal_language" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <!-- modal title -->
+          <h2 class="modal-title">言語選択</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- modal body -->
+        <div class="modal-body">
+          <!-- modal content -->
+          <ul>
+            <a href="index.html">
+              <li>日本語</li>
+            </a>
+            <a href="index_en.html">
+              <li>English<span class="material-symbols-outlined">g_translate</span></li>
+            </a>
+            <a href="#" class="lang_selected">
+              <li>简体中文<span class="material-symbols-outlined">g_translate</span></li>
+            </a>
+          </ul>
+          <!-- /modal content -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- emodal -->
+  <div class="modal fade" id="modal_secret" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <!-- modal title -->
+          <h2 class="modal-title">hi!</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- modal body -->
+        <div class="modal-body">
+          <!-- modal content -->
+          <!-- /modal content -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- back to top button -->
+  <!-- <div id="scrollToTop">
+    <a>
+      <span class="d-inline-block bg-primary">↑</span>
+    </a>
+  </div> -->
+
+  <a id="scrollToTop">
+    <img src="assets/images/ui/return.png" alt="トップへ戻る">
+  </a>
+
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+
+  <!-- justified gallery -->
+  <script src="assets/js/justifiedGallery/jquery.justifiedGallery.js"></script>
+
+  <!-- lightGallery -->
+  <script src="assets/js/lightGallery/plugins/pager/lg-pager.min.js"></script>
+  <script src="assets/js/lightGallery/plugins/zoom/lg-zoom.min.js"></script>
+  <script src="assets/js/lightGallery/lightgallery.umd.js"></script>
+
+  <script src="assets/js/functions.js"></script>
+  <script src="assets/js/attatchElems.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
