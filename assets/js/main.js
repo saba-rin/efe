@@ -1,4 +1,4 @@
-console.info('We use JSlibrary "lightGallery" under their opensource license.\nVisit here for source code.')
+console.info('We use JSlibrary "lightGallery" under their opensource license.\n Visit "https://github.com/saba-rin/efe/tree/master" for source code.')
 
 const gallery = document.getElementById('gallery');
 const $window = $(window);
