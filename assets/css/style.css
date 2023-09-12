@@ -35,6 +35,10 @@ h3{
     font-size: 1.3rem;
 }
 
+#gallery{
+    padding: 5px;
+}
+
 .iconShow{
     display: inline-block;
 }
@@ -325,14 +329,19 @@ footer{
     background-color: transparent;
 }
 
+#modal_post .modal-bg{
+    background: url('../images/ui/welcome.webp') no-repeat right bottom;
+    background-size: contain;
+}
+
 #modal_spoilerAttention .modal-bg{
     background: url('../images/ui/namazu.png') no-repeat right bottom;
     background-size: contain;
 }
-#modal_spoilerAttention .modalWhite{
-    padding: 8px;
+.modalWhite{
+    padding: 15px;
     border-radius: 5px;
-    background-color: #ffffffcc;
+    background-color: #ffffff80;
 }
 
 #modal_language ul{
@@ -342,6 +351,10 @@ footer{
     padding: 0;
     /* width: 40vh; */
 }
+#modal_language .modal-bg{
+    background: url('../images/ui/speak.webp') no-repeat right bottom;
+    background-size: contain;
+}
 #modal_language ul a{
     text-align: center;
     width: 30%;
@@ -350,13 +363,13 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ebebeb;
+    background-color: #ebebeb80;
     border-radius: 5px;
     text-decoration: none;
     color: black;
 }
 #modal_language ul a.lang_selected{
-    background-color: #dcebe1;
+    background-color: #dcebe180;
 }
 #modal_language ul a span{
     font-size: 1.1em;

@@ -64,6 +64,8 @@ async function init() {
 
     setTogglers();
 
+    // shuffle();
+
     if (list.length > thumbsPerScroll) {
         await attatch(list, thumbsPerScroll);
     } else {
