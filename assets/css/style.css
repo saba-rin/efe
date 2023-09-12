@@ -304,7 +304,7 @@ header #topNavbar a{
     transform: translate(0, 70px);
 }
 #bottomImg img{
-    width: 256px;
+    width: 100%;
     height: auto;
 }
 
