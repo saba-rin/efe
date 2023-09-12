@@ -36,7 +36,7 @@ h3{
 }
 
 #gallery{
-    padding: 5px;
+    /* padding: 20px; */
 }
 
 .iconShow{
@@ -96,6 +96,7 @@ select:active{
 .jg-entry{
     border-radius: 3px;
     transition: all 100ms ease-in;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
 }
 .jg-entry:hover{
     animation-name: hoverShadow;
@@ -105,7 +106,7 @@ select:active{
 @keyframes hoverShadow {
     0% {
         transform: scale(1.);
-        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
     }
     100% {
         transform: scale(1.01);
@@ -114,7 +115,7 @@ select:active{
 }
 
 .spoiler{
-    filter: grayscale(1) blur(8px);
+    filter: grayscale(1) blur(8px) brightness(0.5);
     transform: scale(0.9);
 }
 .spoiler:hover{

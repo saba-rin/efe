@@ -60,7 +60,7 @@ function initJg() {
             captions: false,
             lastRow: "nojustify",
             rowHeight: 200,
-            margins: 8
+            margins: 20
         });
 }
 
