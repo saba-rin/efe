@@ -2,9 +2,11 @@ function attatch(list, thumbsToLoad){
     for (let i = loaded; i < thumbsToLoad; i++) {
         let imgEl = document.createElement('a');
         let thumbEl = document.createElement('img');
+
+        fullDirectory = directory + list[i].folder + '/';
         
-        imgEl.href = directory + list[i].title + '.png';
-        thumbEl.src = directory + 'thumb/' + list[i].title + '.webp';
+        imgEl.href = fullDirectory + list[i].title + '.png';
+        thumbEl.src = fullDirectory + 'thumb/' + list[i].title + '.webp';
         
         if (list[i].comment !== undefined) {
             thumbEl.alt = list[i].comment;

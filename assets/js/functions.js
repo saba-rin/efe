@@ -1,5 +1,5 @@
 async function getData() {
-    rawList = await fetch('assets/data1692693035640.json').then(response => response.json());
+    rawList = await fetch('assets/data1694667127228.json').then(response => response.json());
     uiData = await fetch('assets/uiData.json').then(response => response.json());
     list = rawList;
 }
