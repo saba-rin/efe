@@ -46,9 +46,29 @@ h3{
     display: none;
 }
 
-.handWrite,
+
 .lg-sub-html{
+    background-color: #f4f3eef5;
+}
+.handWrite,
+.lg-sub-html p,
+.lg-counter span{
     font-family: 'Kaisei Opti', serif;
+}
+.lg-sub-html p{
+    font-size: 1.05em;
+}
+.lg-img-wrap{
+    padding: 15px;
+}
+.lg-backdrop{
+    background-color: #f4f3eef5;
+}
+.lg-counter,
+.lg-toolbar .lg-icon,
+.lg-sub-html{
+    color: var(--bs-primary);
+    font-weight: normal;
 }
 
 .center{
@@ -99,6 +119,7 @@ select:active{
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
 }
 .jg-entry:hover{
+    cursor: pointer;
     animation-name: hoverShadow;
     animation-fill-mode: forwards;
     animation-duration: 500ms;
@@ -128,13 +149,13 @@ select:active{
 }
 @keyframes hoverSpoiler {
     0% {
-        transform: scale(.9);
+        transform: scale(1.);
         box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
     }
     100% {
         transform: scale(.91);
         box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.75);
-        filter: grayscale(.5) blur(7px);
+        filter: grayscale(.8) blur(7px);
     }
 }
 
@@ -370,7 +391,7 @@ footer{
     color: black;
 }
 #modal_language ul a.lang_selected{
-    background-color: #dcebe180;
+    background-color: #3e640030;
 }
 #modal_language ul a span{
     font-size: 1.1em;

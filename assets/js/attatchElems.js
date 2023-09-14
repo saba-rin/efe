@@ -1,9 +1,9 @@
 function attatch(list, thumbsToLoad){
     for (let i = loaded; i < thumbsToLoad; i++) {
-        let imgEl = document.createElement('a');
+        let imgEl = document.createElement('div');
         let thumbEl = document.createElement('img');
 
-        fullDirectory = directory + list[i].folder + '/';
+        const fullDirectory = directory + list[i].folder + '/';
         
         imgEl.href = fullDirectory + list[i].title + '.png';
         thumbEl.src = fullDirectory + 'thumb/' + list[i].title + '.webp';
@@ -16,6 +16,10 @@ function attatch(list, thumbsToLoad){
         // console.log(list[i].patch);
         imgEl.appendChild(thumbEl);
         gallery.appendChild(imgEl);
+
+        imgEl.addEventListener('click',() => {
+            lg.openGallery(i);
+        });
     }
 
     return false;

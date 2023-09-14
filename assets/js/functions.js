@@ -8,17 +8,36 @@ async function getData() {
 //  initialize lightGallery and justified gallery
 // --------------------------------------------------------
 function initializeGalleries() {
+    // lg = lightGallery(gallery, {
+    //     autoplayFirstVideo: false,
+    //     loop: false,
+    //     hideControlOnEnd: true,
+    //     download: false,
+    //     plugins: [lgZoom],
+    //     mobileSettings: {
+    //         controls: false,
+    //         showCloseIcon: false,
+    //         rotate: false
+    //     }
+    // });
+
+    const sanitizedListForLg = sanitizeForLg(list);
+
     lg = lightGallery(gallery, {
+        dynamic: true,
         autoplayFirstVideo: false,
-        loop: false,
         hideControlOnEnd: true,
         download: false,
-        plugins: [lgZoom],
+        plugins: [lgZoom, lgHash],
+        facebook: false,
+        pinterest: false,
+        twitterDropdownText: "Twitter / X",
         mobileSettings: {
             controls: false,
             showCloseIcon: false,
             rotate: false
-        }
+        },
+        dynamicEl: sanitizedListForLg
     });
 
     initJg();
@@ -39,6 +58,29 @@ function initializeGalleries() {
     });
 }
 
+
+function sanitizeForLg(list){
+    let tmp = [];
+
+    list.forEach(element => {
+        if (element.comment != undefined) {
+            tmp.push({
+                src: directory + element.folder + '/' + element.title + '.png',
+                thumb: directory + element.folder + '/thumb/' + element.title + '.webp',
+                subHtml: `<p>${element.comment}</p>`
+            });
+        }else{
+            tmp.push({
+                src: directory + element.folder + '/' + element.title + '.png',
+                thumb: directory + element.folder + '/thumb/' + element.title + '.webp',
+            });
+        }
+    });
+
+    return tmp;
+}
+
+
 function loadMore(){
     loading = true;
     let loadUntil;
@@ -53,6 +95,7 @@ function loadMore(){
     setTimeout(() => {loading = false}, 1000);
 }
 
+
 // initialize justifiedGallery only
 function initJg() {
     $("#gallery")
@@ -63,6 +106,7 @@ function initJg() {
             margins: 20
         });
 }
+
 
 
 //  filter images that can be spoiler
@@ -89,6 +133,9 @@ function initParams() {
     loaded = 0;
 }
 
+
+//  setup togglers for smartphone
+// ----------------------------------------
 function setTogglers(){
     togglers.forEach(element => {
         element.src = 'assets/images/ui/togglers/'+Math.floor(Math.random()*uiData.togglers)+'.webp';
@@ -99,6 +146,9 @@ function setTogglers(){
     });
 }
 
+//  experimental
+// -----------------------
 function shuffle(){
-    list = list.sort(() => {return Math.random() - 0.5;});
+    list = list.sort((a, b) => {return Math.random() - 0.5;});
+    refresh();
 }

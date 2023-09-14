@@ -43,6 +43,7 @@ const thumbsPerScroll = 40;
 const directory = './assets/images/gallery/';
 
 let lg, list, rawList;
+let chunks  = [];
 let loaded = 0;
 let loading = false;
 
@@ -80,11 +81,7 @@ async function init() {
 
 function refresh() {
     initJg();
-
-    setTimeout(() => {
-        lg.refresh();
-        blockSpoiler();
-    }, 500);
+    blockSpoiler();
 }
 
 init();
