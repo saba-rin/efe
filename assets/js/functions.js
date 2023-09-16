@@ -27,7 +27,7 @@ function initializeGalleries() {
         dynamic: true,
         autoplayFirstVideo: false,
         hideControlOnEnd: true,
-        download: false,
+        download: true,
         plugins: [lgZoom, lgHash],
         facebook: false,
         pinterest: false,

@@ -71,6 +71,25 @@ h3{
     font-weight: normal;
 }
 
+.lg-prev,
+.lg-next{
+    background-color: rgba(0,0,0,0.1);
+}
+.lg-prev::after{
+    background: url('../images/ui/cursor_prev.webp');
+}
+.lg-next::before{
+    background: url('../images/ui/cursor_next.webp');
+}
+.lg-prev::after,
+.lg-next::before{
+    content: '';
+    display: inline-block;
+    background-size: contain;
+    width: 22px;
+    height: 22px;
+}
+
 .center{
     text-align: center;
 }
