@@ -28,7 +28,8 @@ function initializeGalleries() {
         autoplayFirstVideo: false,
         hideControlOnEnd: true,
         download: true,
-        plugins: [lgZoom, lgHash],
+        plugins: [lgZoom, lgHash, lgShare],
+        customSlideName: true,
         facebook: false,
         pinterest: false,
         twitterDropdownText: "Twitter / X",
@@ -43,7 +44,7 @@ function initializeGalleries() {
     initJg();
 
     window.addEventListener("scroll", () => {
-        if ($window.scrollTop() >= $(document).height() - $window.height() - 180 && !loading){
+        if ($window.scrollTop() >= $(document).height() - $window.height() - 180 && !loading) {
             loadMore();
         }
 
@@ -51,7 +52,7 @@ function initializeGalleries() {
         if ($window.scrollTop() > 200) {
             btn.classList.remove('scrlBtnHidden')
             btn.classList.add('scrlBtnShow');
-        }else{
+        } else {
             btn.classList.remove('scrlBtnShow')
             btn.classList.add('scrlBtnHidden');
         }
@@ -59,29 +60,29 @@ function initializeGalleries() {
 }
 
 
-function sanitizeForLg(list){
-    let tmp = [];
+function sanitizeForLg(list) {
+    let response = [];
 
     list.forEach(element => {
+        let tmp = {};
+
+        tmp.src = directory + element.folder + '/' + element.title + '.png';
+        tmp.thumb = directory + element.folder + '/thumb/' + element.title + '.webp';
+        tmp.slideName = element.title;
+        tmp.tweetText = 'efrome.netからの写真共有';
+
         if (element.comment != undefined) {
-            tmp.push({
-                src: directory + element.folder + '/' + element.title + '.png',
-                thumb: directory + element.folder + '/thumb/' + element.title + '.webp',
-                subHtml: `<p>${element.comment}</p>`
-            });
-        }else{
-            tmp.push({
-                src: directory + element.folder + '/' + element.title + '.png',
-                thumb: directory + element.folder + '/thumb/' + element.title + '.webp',
-            });
+            tmp.subHtml = `<p>${element.comment}</p>`;
         }
+
+        response.push(tmp);
     });
 
-    return tmp;
+    return response;
 }
 
 
-function loadMore(){
+function loadMore() {
     loading = true;
     let loadUntil;
     if (list.length - loaded > thumbsPerScroll) {
@@ -92,7 +93,7 @@ function loadMore(){
 
     attatch(list, loadUntil);
     refresh();
-    setTimeout(() => {loading = false}, 1000);
+    setTimeout(() => { loading = false }, 1000);
 }
 
 
@@ -136,19 +137,25 @@ function initParams() {
 
 //  setup togglers for smartphone
 // ----------------------------------------
-function setTogglers(){
+function setTogglers() {
     togglers.forEach(element => {
-        element.src = 'assets/images/ui/togglers/'+Math.floor(Math.random()*uiData.togglers)+'.webp';
+        element.src = 'assets/images/ui/togglers/' + Math.floor(Math.random() * uiData.togglers) + '.webp';
 
         element.addEventListener("click", (elem) => {
-            elem.target.src = 'assets/images/ui/togglers/'+Math.floor(Math.random()*uiData.togglers)+'.webp';
+            elem.target.src = 'assets/images/ui/togglers/' + Math.floor(Math.random() * uiData.togglers) + '.webp';
         })
     });
 }
 
 //  experimental
 // -----------------------
-function shuffle(){
-    list = list.sort((a, b) => {return Math.random() - 0.5;});
+function shuffle() {
+    initParams();
+    list = list.sort((a, b) => { return Math.random() - 0.5; });
     refresh();
+}
+
+function refresh() {
+    initJg();
+    blockSpoiler();
 }

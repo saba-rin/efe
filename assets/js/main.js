@@ -1,4 +1,4 @@
-console.info('We use JSlibrary "lightGallery" under their opensource license.\n Visit "https://github.com/saba-rin/efe/tree/master" for source code.')
+console.info('We use javascript library "lightGallery" under their opensource license.\n Visit "https://github.com/saba-rin/efe/tree/master" for source code.')
 
 const gallery = document.getElementById('gallery');
 const $window = $(window);
@@ -75,12 +75,6 @@ async function init() {
 
     await initializeGalleries();
 
-    blockSpoiler();
-}
-
-
-function refresh() {
-    initJg();
     blockSpoiler();
 }
 
