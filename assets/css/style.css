@@ -1,7 +1,20 @@
+@font-face{
+    font-family: 'ZenKakuGothic';
+    src: url('../fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Medium.woff2');
+    src: url('../fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Medium.woff');
+    src: url('../fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Medium.ttf');
+}
+@font-face {
+    font-family: 'KaiseiOpti';
+    src: url('../fonts/Kaisei_Opti/KaiseiOpti-Medium.woff2');
+    src: url('../fonts/Kaisei_Opti/KaiseiOpti-Medium.woff');
+    src: url('../fonts/Kaisei_Opti/KaiseiOpti-Medium.ttf');
+}
+
 *{
     box-sizing: border-box;
     line-break: strict;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-family: 'ZenKakuGothic', sans-serif;
     /* color: #151515; */
 }
 
@@ -53,7 +66,7 @@ h3{
 .handWrite,
 .lg-sub-html p,
 .lg-counter span{
-    font-family: 'Kaisei Opti', serif;
+    font-family: 'KaiseiOpti', serif;
 }
 .lg-sub-html p{
     font-size: 1.05em;
