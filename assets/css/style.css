@@ -366,7 +366,7 @@ header #topNavbar a{
 }
 
 footer{
-    background-image: url('../images/ui/footer_bg.png');
+    background-image: url('../images/ui/footer_bg.webp');
     height: 128px;
     width: 100%;
 }
@@ -389,7 +389,7 @@ footer{
 }
 
 #modal_spoilerAttention .modal-bg{
-    background: url('../images/ui/namazu.png') no-repeat right bottom;
+    background: url('../images/ui/namazu.webp') no-repeat right bottom;
     background-size: contain;
 }
 .modalWhite{
@@ -431,6 +431,6 @@ footer{
 
 #modal_secret .modal-body{
     height: 500px;
-    background: url('../images/ui/secret.png') bottom center no-repeat;
+    background: url('../images/ui/secret.webp') bottom center no-repeat;
     background-size: contain;
 }
