@@ -68,16 +68,12 @@
         Uzusube</a>から、私のトームストーンに届いた写真を掲載しています。
     </p>
 
-    <div id="spoilerBlock" class="px-2">
-      <div class="row">
-        <div class="col-12">
-          <h2>
-            ネタバレガード
-            <a data-bs-toggle="modal" data-bs-target="#modal_spoilerAttention" class="helpIcon">?</a>
-          </h2>
-        </div>
-      </div>
-      <div class="row mb-4">
+    <div id="spoilerBlock" class="row features">
+      <h2>
+        ネタバレガード
+        <a data-bs-toggle="modal" data-bs-target="#modal_spoilerAttention" class="helpIcon">?</a>
+      </h2>
+      <div class="mb-4">
         <div class="col-12">
           <p>
             指定されたパッチよりも先のコンテンツが含まれる画像が隠されます。<br>
@@ -105,9 +101,8 @@
       </div>
     </div>
 
-    <div id="filter" class="row">
+    <div id="filter" class="row features">
       <h2>絞り込みフィルタ</h2>
-      <div id="fWrapper">
         <div class="fItems col-12 col-sm-6 col-md-4">
           <span>場所</span>
           <select class="filters mb-3 mb-md-0 p-2" name="fPlace" id="fPlace">
@@ -152,6 +147,22 @@
             <option value="pt_601">6.x: 暁月のフィナーレ + マイナーパッチ</option>
           </select>
         </div>
+    </div>
+
+    <div id="sorter" class="row features">
+      <h2 class="mb-4">ソート</h2>
+      <div class="sItems col-12 col-sm-6 col-md-4 sorters">
+        <select name="sortType" id="sortType" class="p-2">
+          <option value="ADD">追加日</option>
+          <option value="PAT">拡張パッチ</option>
+        </select>
+      </div>
+
+      <div class="sItems col-12 col-sm-6 col-md-4 sorters">
+        <select name="sortCondition" id="sortCondition" class="p-2">
+          <option value="ASC">昇順</option>
+          <option value="DESC">降順</option>
+        </select>
       </div>
     </div>
   </header>
@@ -327,8 +338,8 @@
   <!-- lightGallery -->
   <script src="assets/js/lightGallery/plugins/share/lg-share.min.js"></script>
   <script src="assets/js/lightGallery/plugins/hash/lg-hash.min.js"></script>
-  <script src="assets/js/lightGallery/plugins/zoom/lg-zoom.min.js"></script>
-  <script src="assets/js/lightGallery/lightgallery.min.js"></script>
+  <script src="assets/js/lightGallery/plugins/zoom/lg-zoom.umd.js"></script>
+  <script src="assets/js/lightGallery/lightgallery.umd.js"></script>
 
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "af8543f73f194cfabc88e05da590654b"}'></script><!-- End Cloudflare Web Analytics -->
 

@@ -1,5 +1,5 @@
 async function getData() {
-    rawList = await fetch('assets/data1694667127228.json').then(response => response.json());
+    rawList = await fetch('assets/data1695357491710.json').then(response => response.json());
     uiData = await fetch('assets/uiData.json').then(response => response.json());
     list = rawList;
 }
@@ -147,6 +147,64 @@ function setTogglers() {
     });
 }
 
+//  sort photos
+// ----------------------------
+function sort() {
+    const mode = document.getElementById('sortType').value + document.getElementById('sortCondition').value;
+
+    switch (mode) {
+        case 'ADDASC':
+            list = list.sort((a, b) => {
+                if (a.time < b.time) {
+                    return -1;
+                }else{
+                    return 1;
+                }
+            });
+            break;
+        case 'ADDDESC':
+            list = list.sort((a, b) => {
+                if (a.time > b.time) {
+                    return -1;
+                }else{
+                    return 1;
+                }
+            });
+            break;
+        case 'PATASC':
+            list = list.sort((a, b) => {
+                if (a.patch <= b.patch) {
+                    return -1;
+                }else{
+                    return 1;
+                }
+            });
+            break;
+        case 'PATDESC':
+            list = list.sort((a, b) => {
+                if (a.patch >= b.patch) {
+                    return -1;
+                }else{
+                    return 1;
+                }
+            });
+            break;
+        default:
+            console.error('ERROR: invalid sort option', code);
+            break;
+    }
+
+    // list = list.sort(evaluator);
+
+    while (gallery.firstChild) {
+        gallery.removeChild(gallery.firstChild);
+    }
+
+    initParams();
+    refresh();
+    init();
+}
+
 //  experimental
 // -----------------------
 function shuffle() {
@@ -157,5 +215,6 @@ function shuffle() {
 
 function refresh() {
     initJg();
+    lg.refresh(sanitizeForLg(list));
     blockSpoiler();
 }

@@ -312,7 +312,7 @@ header #topNavbar a{
     transition: 500ms;
 }
 
-#spoilerBlock,#filter{
+.features{
     margin: 50px 0;
 }
 
@@ -341,12 +341,13 @@ header #topNavbar a{
     display: flex;
     flex-wrap: wrap;
 }
-.fItems{
+.fItems, .sItems{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
-.fItems > *{
+.fItems > *,
+.sItems > *{
     width: 90%;
 }
 .fItems > span{

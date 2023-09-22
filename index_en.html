@@ -26,7 +26,7 @@
 
   <!-- material icons -->
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,-25" />
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,-25" />
 
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -70,8 +70,8 @@
       sent to my tomestone.
     </p>
 
-    <div id="spoilerBlock" class="px-2">
-      <div class="row mb-4">
+    <div id="spoilerBlock" class="row features">
+      <div class="mb-4">
         <div class="col-12">
           <h2>
             Spoiler prevention
@@ -107,9 +107,8 @@
       </div>
     </div>
 
-    <div id="filter" class="row">
+    <div id="filter" class="row features">
       <h2>Filters</h2>
-      <div id="fWrapper">
         <div class="fItems col-12 col-sm-6 col-md-4">
           <span>Place</span>
           <select class="filters mb-3 mb-md-0 p-2" name="fPlace" id="fPlace">
@@ -154,6 +153,22 @@
             <option value="pt_601">6.x - Endwalker & Minor patch</option>
           </select>
         </div>
+    </div>
+
+    <div id="sorter" class="row features">
+      <h2 class="mb-4">Sort</h2>
+      <div class="sItems col-12 col-sm-6 col-md-4 sorters">
+        <select name="sortType" id="sortType" class="p-2">
+          <option value="ADD">Date added</option>
+          <option value="PAT">Patch</option>
+        </select>
+      </div>
+
+      <div class="sItems col-12 col-sm-6 col-md-4 sorters">
+        <select name="sortCondition" id="sortCondition" class="p-2">
+          <option value="ASC">Ascending</option>
+          <option value="DESC">Descending</option>
+        </select>
       </div>
     </div>
   </header>

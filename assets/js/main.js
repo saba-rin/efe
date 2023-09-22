@@ -57,6 +57,11 @@ for (let i = 0; i < filters.length; i++) {
     filters[i].addEventListener("change", doSearch);
 }
 
+let sorters = document.getElementsByClassName('sorters');
+for (let i = 0; i < sorters.length; i++) {
+    sorters[i].addEventListener("change", sort);
+}
+
 
 async function init() {
     if (!rawList) {
@@ -67,14 +72,15 @@ async function init() {
 
     // shuffle();
 
+    
     if (list.length > thumbsPerScroll) {
         await attatch(list, thumbsPerScroll);
     } else {
         await attatch(list, list.length);
     }
-
+    
     await initializeGalleries();
-
+    
     blockSpoiler();
 }
 

@@ -785,6 +785,7 @@
         };
         Zoom.prototype.isImageSlide = function (index) {
             var currentItem = this.core.galleryItems[index];
+            console.log(index, currentItem);
             return this.core.getSlideType(currentItem) === 'image';
         };
         Zoom.prototype.getPossibleSwipeDragCords = function (scale) {
