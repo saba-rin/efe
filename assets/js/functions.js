@@ -66,8 +66,8 @@ function sanitizeForLg(list) {
     list.forEach(element => {
         let tmp = {};
 
-        tmp.src = directory + `s${element.folder}` + '/' + element.title + '.png';
-        tmp.thumb = directory + `s${element.folder}` + '/thumb/' + element.title + '.webp';
+        tmp.src = directory + element.folder + '/' + element.title + '.png';
+        tmp.thumb = directory + element.folder + '/thumb/' + element.title + '.webp';
         tmp.slideName = element.title;
         tmp.tweetText = 'efrome.netからの写真共有';
 
